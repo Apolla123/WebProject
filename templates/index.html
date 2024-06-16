@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- добавляем стили -->
+    <link rel="stylesheet" type="text/css" href="static/css/style_img.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/style_text.css"/>
+
+    <!-- если человек зарегестрирован -->
+    {% if current_user.is_authenticated %}
+    <div class="index-container">
+
+        <!-- добавляем кнопку "Добавить стили" -->
+        <a class="btn btn-success" href="/addjob">Добавить работу</a>
+
+        <!-- заголовок -->
+        <h1>Работа</h1>
+
+            {% for item in jobs%}
+
+                <div class="col-md6 border rounded">
+
+                    <!-- пишем работу -->
+                    <h2>{{item.job}}</h2>
+
+                    <div>
+                        <!-- пишем имя работника -->
+                        Имя работника - {{item.team_leader}}
+                    </div>
+
+                    <div>
+                        <!-- пишем время работы -->
+                        Время работы - {{item.work_size}} (часов в день)
+                    </div>
+
+                    <div>
+                        <!-- пишем место работы -->
+                        Сайт/Место работы - {{item.collaborators}}
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+    </div>
+
+        <!-- Картинка -->
+        <img src="/static/img/{{ img1 }}" alt="" class="sky2-image">
+
+        <!-- Картинка 2 -->
+        <img src="/static/img/{{ img2 }}" alt="" class="sky3-image">
+
+    {% endif %}
+
+{% endblock %}

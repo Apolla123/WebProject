@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- добавляем стили -->
+    <link rel="stylesheet" type="text/css" href="static/css/style_img.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/style_text.css"/>
+
+    <!-- добавляем класс -->
+    <div class="container">
+
+        <!-- пишем текст -->
+        <h1 class="success">Добро пожаловать!</h1>
+
+        <h2 class="success-ps">Пожалуйста войдите или зарегистрируйтесь,</h2>
+        <h2 class="success-ps">нажав на "Войти" или "Зарегистрироваться"</h2>
+
+    </div>
+
+    <!-- Картинка -->
+    <img src="/static/img/money.jpg" alt="" class="money-image">
+
+{% endblock %}

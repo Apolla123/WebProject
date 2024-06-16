@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- язык -->
+    <html lang="en">
+      <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- добавляем стили -->
+        <link rel="stylesheet" type="text/css" href="static/css/style_img.css" />
+
+      </head>
+      <body>
+        <div>
+
+            <form action="" method="post">
+
+                <div>
+
+                    <!-- заголовок -->
+                    <h1>Температа</h1>
+
+                    <div>
+
+                    <p>
+                        <input type="text" class="form-control" id="city"
+                               placeholder="Введите город, где хотите узнать температуру" name="city">
+                    </p>
+
+                    <p>
+                        <div>
+                            <input type="checkbox" class="form-check-input" id="acceptRules" name="accept">
+                            <label class="form-check-label" for="acceptRules">Как ощущается</label>
+                        </div>
+                    </p>
+
+                    <p>
+                        <button type="submit" class="btn btn-primary">Узнать Температуру</button>
+                    </p>
+
+                    <!-- Картинка под текстом -->
+                    <img src="/static/img/temp_img.png" alt="" class="temp-image">
+
+                </div>
+
+            </form>
+
+        </div>
+      </body>
+    </html>
+
+{% endblock %}

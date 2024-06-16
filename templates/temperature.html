@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- добавляем стили -->
+    <link rel="stylesheet" type="text/css" href="static/css/style_img.css"/>
+    <link rel="stylesheet" type="text/css" href="static/css/style_text.css"/>
+
+    <!-- добавляем класс -->
+    <div class="container">
+
+        <!-- пишем температуру -->
+        <h1>Температура в {{ city }} {{ temperature }}°C!</h1>
+
+        <!-- если надо показать как чувствуется -->
+        {% if feel_like %}
+
+            <!-- показываем -->
+            <h1 class="feel-like">Ощущается как {{ temperature_feel_like }}°C!</h1>
+
+        {% endif %}
+
+    </div>
+
+    <!-- Картинка -->
+    <img src="/static/img/sky.jpg" alt="" class="sky-image">
+
+{% endblock %}

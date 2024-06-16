@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- заголовок -->
+    <p>Register Form</p>
+
+    <form action="" method="post" novalidate>
+
+        <div>
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+
+            <p>
+
+                <!-- пишем логин -->
+                {{ form.login.label }}
+                {{ form.login(type='string') }}
+
+                {% for error in form.login.errors %}
+                    {{ error }}
+                {% endfor %}
+
+            </p>
+
+            <p>
+                <!-- пишем пароль -->
+                {{ form.password.label }}
+                {{ form.password(type='password') }}
+
+                {% for error in form.password.errors %}
+                    {{ error }}
+                {% endfor %}
+
+            </p>
+
+            <p>
+
+                <!-- пишем повтор пароля -->
+                {{ form.repeat_password.label }}
+                {{ form.repeat_password(type='password') }}
+
+                {% for error in form.repeat_password.errors %}
+                    {{ error }}
+                {% endfor %}
+
+            </p>
+
+            <p>
+
+                <!-- пишем фамилию -->
+                {{ form.surname.label }}
+                {{ form.surname(type='string') }}
+
+                {% for error in form.surname.errors %}
+                    {{ error }}
+                {% endfor %}
+
+            </p>
+
+            <p>
+
+                <!-- пишем имя -->
+                {{ form.name.label }}
+                {{ form.name(type='string') }}
+
+                {% for error in form.name.errors %}
+                    {{ error }}
+                {% endfor %}
+
+            </p>
+
+            <p>
+
+                <!-- пишем возраст -->
+                {{ form.age.label }}
+                {{ form.age(type='integer') }}
+
+                {% for error in form.age.errors %}
+                    {{ error }}
+                {% endfor %}
+
+            </p>
+
+            <p>
+
+                <!-- кнопка отправить -->
+                {{ form.submit(type='submit') }}
+
+                {{ message }}
+
+            </p>
+
+        </div>
+    </form>
+
+{% endblock %}
